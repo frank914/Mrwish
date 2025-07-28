@@ -28,6 +28,7 @@
     <button onclick="showSection('idle')">空閒時可以做的事情</button>
     <button onclick="showSection('video')">影片教學雲端區</button>
     <button onclick="showSection('rules')">店裡規則</button>
+    <button onclick="showSection('range')">外送距離</button>
   </div>
 
   <!-- 各分類內容 -->
@@ -69,13 +70,33 @@
         title: "影片教學雲端區",
         content: '<p><a href="https://drive.google.com/drive/folders/1VoFSaCjifwtFe3Cu5kyYSLwpOa5UTMt9?usp=sharing" target="_blank">點我打開影片資料夾</a></p>'
       },
-      rules: {
-        title: "店裡規則",
-        content: `
-          <p>以下為店裡規則（來自 Google 試算表，自動更新）：</p>
-          <iframe src="https://docs.google.com/spreadsheets/d/1Ubnu6e7WtZWF1Jp8tCNdI3Bn8dvDs9SFdo36VlxJrMI&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="500"></iframe>
-        `
-      }
+range: {
+  title: "外送距離",
+  content: `
+    <ul>
+      <li>滿 250 元可外送 1 公里以內</li>
+      <li>滿 300 元可外送 1.5 公里以內</li>
+      <li>滿 400 元可外送 2 公里以內</li>
+      <li>滿 500 元可外送 2.5 公里以內</li>
+      <li>滿 600 元可外送 3 公里以內</li>
+      <li>滿 700 元可外送 3.5 公里以內</li>
+      <li>滿 800 元可外送 4 公里以內</li>
+      <li>滿 900 元可外送 4.5 公里以內</li>
+      <li>滿 1000 元可外送 5 公里以內</li>
+      <li>滿 1300 元可外送 5.5 公里以內</li>
+      <li>滿 1600 元可外送 6 公里以內</li>
+      <li>滿 2000 元可外送 6.5 公里以內</li>
+    </ul>
+    <p><strong>最遠可外送距離：6.5 公里</strong></p>
+  `
+},
+rules: {
+  title: "店裡規則",
+  content: `
+    <p>以下為店裡規則（來自 Google 試算表，自動更新）：</p>
+    <iframe src="https://docs.google.com/spreadsheets/d/1Ubnu6e7WtZWF1Jp8tCNdI3Bn8dvDs9SFdo36VlxJrMI/pubhtml?gid=0&single=true&widget=true&headers=false" width="100%" height="500"></iframe>
+  `
+}
     };
 
     function checkPassword() {
