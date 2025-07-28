@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>飲料店工作站</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .hidden { display: none; }
+    button { padding: 10px 20px; margin: 5px; }
+  </style>
+</head>
+<body>
+  <!-- 登入區 -->
+  <div id="login">
+    <h2>請輸入密碼</h2>
+    <input type="password" id="password" />
+    <button onclick="checkPassword()">登入</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <!-- 主選單 -->
+  <div id="menu" class="hidden">
+    <h2>飲料店工作站</h2>
+    <button onclick="showSection('morning')">開早該做的事情</button>
+    <button onclick="showSection('night')">收晚該做的事情</button>
+    <button onclick="showSection('idle')">空閒時可以做的事情</button>
+    <button onclick="showSection('video')">影片教學雲端區</button>
+    <button onclick="showSection('rules')">店裡規則</button>
+  </div>
+
+  <!-- 各分類內容 -->
+  <div id="content" class="hidden">
+    <div id="sectionTitle"></div>
+    <div id="sectionContent"></div>
+    <button onclick="goBack()">返回</button>
+  </div>
+
+  <script>
+    const PASSWORD = "wish123"; // ✅ 修改這裡的密碼
+    const sections = {
+      morning: {
+        title: "開早該做的事情",
+        content: "<ul><li>開POS機</li><li>整理備料</li><li>打掃前場</li></ul>"
+      },
+      night: {
+        title: "收晚該做的事情",
+        content: "<ul><li>關POS</li><li>倒垃圾</li><li>鎖門</li></ul>"
+      },
+      idle: {
+        title: "空閒時可以做的事情",
+        content: "<ul><li>清潔區域</li><li>補貨</li><li>複習菜單</li></ul>"
+      },
+      video: {
+        title: "影片教學雲端區",
+        content: '<p><a href="https://drive.google.com/..." target="_blank">點我打開影片資料夾</a></p>'
+      },
+      rules: {
+        title: "店裡規則",
+        content: "<ul><li>禁止滑手機</li><li>制服整齊</li><li>客人優先</li></ul>"
+      }
+    };
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      if (input === PASSWORD) {
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("menu").classList.remove("hidden");
+      } else {
+        document.getElementById("error").textContent = "密碼錯誤，請再試一次。";
+      }
+    }
+
+    function showSection(key) {
+      const data = sections[key];
+      document.getElementById("menu").classList.add("hidden");
+      document.getElementById("content").classList.remove("hidden");
+      document.getElementById("sectionTitle").innerHTML = `<h3>${data.title}</h3>`;
+      document.getElementById("sectionContent").innerHTML = data.content;
+    }
+
+    function goBack() {
+      document.getElementById("content").classList.add("hidden");
+      document.getElementById("menu").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
