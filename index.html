@@ -22,13 +22,14 @@
 
   <!-- 主選單 -->
   <div id="menu" class="hidden">
-    <h2>飲料店工作站</h2>
+    <h2>士林承德飲料店工作站</h2>
     <button onclick="showSection('morning')">開早該做的事情</button>
     <button onclick="showSection('night')">收晚該做的事情</button>
     <button onclick="showSection('idle')">空閒時可以做的事情</button>
+    <button onclick="showSection('range')">外送距離</button>
     <button onclick="showSection('video')">影片教學雲端區</button>
     <button onclick="showSection('rules')">店裡規則</button>
-    <button onclick="showSection('range')">外送距離</button>
+    <button onclick="showSection('SGS')">衛生稽查SOP</button>
   </div>
 
   <!-- 各分類內容 -->
@@ -59,14 +60,48 @@
           </ul>
         `
       },
-      night: {
-        title: "收晚要做的事情",
-        content: "<ul><li>關POS</li><li>倒垃圾</li><li>鎖門</li></ul>"
-      },
-      idle: {
-        title: "空閒時可做的事情",
-        content: "<ul><li>清潔區域</li><li>補貨</li><li>複習菜單</li></ul>"
-      },
+		night: {
+		  title: "收晚要做的事情",
+		  content: `
+			<h4>前場</h4>
+			<ul>
+			  <li>紀錄茶報廢並發至群組</li>
+			  <li>清潔冰塊區（清空冰塊、淋熱水，大掃除時使用酒精消毒擦拭）</li>
+			  <li>檢查液糖、杯子、吸管是否補足</li>
+			  <li>抓料區原料冰回冰箱（盒外擦拭）、清潔抓料區檯面</li>
+			  <li>準備鋼杯，裡面裝冷水加入酵素粉，按 4 清洗奶泡管</li>
+			  <li>抓料台清潔後，清洗所有容器，放至洞洞盆並放回抓料區</li>
+			  <li>放置量杯的鐵板刷洗乾淨，量杯洗淨後倒扣放回鐵板上</li>
+			  <li>封膜機清洗並歸零</li>
+			  <li>前場水槽刷洗乾淨並更換濾網</li>
+			  <li>冰沙區工具清洗並放至濾盤</li>
+			  <li>清潔水漬、髒汙</li>
+			</ul>
+			<h4>後場</h4>
+			<ul>
+			  <li>水桶裝熱水加入酵素粉泡抹布</li>
+			  <li>茶桶、百合壺清洗乾淨並歸位</li>
+			  <li>後場水槽清洗並更換濾網</li>
+			  <li>補齊退冰</li>
+			  <li>倒垃圾</li>
+			  <li>開製冰機</li>
+			  <li>確認 POS 機、封膜機、糖機、蒸汽機、冰沙機、煮茶機是否關機</li>
+			  <li>清潔水漬、髒汙</li>
+			  <li>掃地、拖地</li>
+			  <li>點錢、抓錢、收櫃</li>
+			</ul>
+		  `
+		},
+		idle: {
+		  title: "空閒時可做的事情",
+		  content: `
+			<ul>
+			  <li>門面及店面清潔</li>
+			  <li>補料，確認原物料是否充足</li>
+			  <li>備料（愛玉、葡萄果粒、果泥、水果、芭樂備杯、紅茶分裝等）</li>
+			</ul>
+		  `
+		},
       video: {
         title: "影片教學雲端區",
         content: '<p><a href="https://drive.google.com/drive/folders/1VoFSaCjifwtFe3Cu5kyYSLwpOa5UTMt9?usp=sharing" target="_blank">點我打開影片資料夾</a></p>'
@@ -93,11 +128,13 @@
       },
       rules: {
         title: "店裡規則",
-        content: `
-          <p>以下為店裡規則（來自 Google 試算表，自動更新）：</p>
-          <iframe src="https://docs.google.com/spreadsheets/d/1Ubnu6e7WtZWF1Jp8tCNdI3Bn8dvDs9SFdo36VlxJrMI/pubhtml?gid=0&single=true&widget=true&headers=false" width="100%" height="500"></iframe>
-        `
-      }
+        content: '<p><a href="https://docs.google.com/spreadsheets/d/1Ubnu6e7WtZWF1Jp8tCNdI3Bn8dvDs9SFdo36VlxJrMI/edit?gid=0#gid=0" target="_blank">點我打開</a></p>'
+      },
+	  
+      SGS: {
+        title: "整理中",
+        content: ''
+      },
     };
 
     function checkPassword() {
