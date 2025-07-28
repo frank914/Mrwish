@@ -8,6 +8,7 @@
     body { font-family: sans-serif; padding: 20px; }
     .hidden { display: none; }
     button { padding: 10px 20px; margin: 5px; }
+    iframe { border: none; }
   </style>
 </head>
 <body>
@@ -37,27 +38,30 @@
   </div>
 
   <script>
-    const PASSWORD = "28854748"; // ✅ 修改這裡的密碼
+    const PASSWORD = "28854748"; // ✅ 密碼
     const sections = {
       morning: {
-        title: "開早該做的事情",
+        title: "開早要做的事情",
         content: "<ul><li>開POS機</li><li>整理備料</li><li>打掃前場</li></ul>"
       },
       night: {
-        title: "收晚該做的事情",
+        title: "收晚要做的事情",
         content: "<ul><li>關POS</li><li>倒垃圾</li><li>鎖門</li></ul>"
       },
       idle: {
-        title: "空閒時可以做的事情",
+        title: "空閒時可做的事情",
         content: "<ul><li>清潔區域</li><li>補貨</li><li>複習菜單</li></ul>"
       },
       video: {
         title: "影片教學雲端區",
-        content: '<p><a href="https://drive.google.com/..." target="_blank">點我打開影片資料夾</a></p>'
+        content: '<p><a href="https://drive.google.com/drive/folders/1VoFSaCjifwtFe3Cu5kyYSLwpOa5UTMt9?usp=sharing" target="_blank">點我打開影片資料夾</a></p>'
       },
       rules: {
         title: "店裡規則",
-        content: "<ul><li>禁止滑手機</li><li>制服整齊</li><li>客人優先</li></ul>"
+        content: `
+          <p>以下為店裡規則（來自 Google 試算表，自動更新）：</p>
+          <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8n6hHGVHaE1pxiCXv5L8-fBYp8FKu1nKzq3RbPMHEcHG5qLJw0ZQ0JvaJgFPi4UMnmhxgIR91UbSx/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="500"></iframe>
+        `
       }
     };
 
